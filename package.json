@@ -1,0 +1,24 @@
+{
+  "name": "let-me",
+  "version": "1.0.0",
+  "description": "let me",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thyhates/let-me.git"
+  },
+  "author": "zhipu.liao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thyhates/let-me/issues"
+  },
+  "homepage": "https://github.com/thyhates/let-me#readme",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2"
+  }
+}
