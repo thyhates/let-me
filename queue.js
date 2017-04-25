@@ -74,3 +74,22 @@ priorityQueue.enqueue('Jack',1);
 priorityQueue.enqueue('Camila',1);
 console.log('-'.repeat(15));
 priorityQueue.print();
+console.log('-'.repeat(20));
+function hotPotato(nameList, num) {
+    let queue=new Queue();
+    for(let i=0;i<nameList.length;i++){
+        queue.enqueue(nameList[i]);
+    }
+    let eliminated='';
+    while(queue.size()>1){
+        for(let i=0;i<num;i++){
+            queue.enqueue(queue.dequeue());
+        }
+        eliminated=queue.dequeue();
+        console.log(eliminated+'在击鼓传花游戏中被淘汰');
+    }
+    return queue.dequeue();
+}
+let names=['John','Jack','Camila','Ingrid','Carl'];
+let winner=hotPotato(names,7);
+console.log('获胜者:'+winner);
