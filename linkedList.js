@@ -95,7 +95,7 @@ console.log(myLinkedList.indexOf('3'));
 console.log(myLinkedList.toString());
 console.log(myLinkedList.getHead());
 
-
+module.export=LinkedList;
 function DoublyLinkedList() {
     let Node = function (element) {
         this.element = element;
