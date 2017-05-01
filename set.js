@@ -81,7 +81,7 @@ function Set() {
     };
 }
 
-module.export =Set;
+module.exports =Set;
 
 let setA=new Set();
 setA.add(1);

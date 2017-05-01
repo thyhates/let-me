@@ -3,7 +3,7 @@
  */
 'use strict';
 
-const LinkedList = require('linkedList');
+const LinkedList = require('./linkedList');
 
 function HashTable() {
     let table = [];
@@ -13,6 +13,14 @@ function HashTable() {
             hash += key.charCodeAt(i);
         }
         return hash % 37;
+    };
+    let ValuePair = function(key, value) {
+        this.key = key;
+        this.value = value;
+
+        this.toString = () => {
+            return '[' + this.key + ' - ' + this.value + ']';
+        }
     };
 
     /*this.put =(key,value)=>{
@@ -85,20 +93,13 @@ function HashTable() {
         }
     };
 
-    let ValuePair = (key, value) => {
-        this.key = key;
-        this.value = value;
 
-        this.toString = () => {
-            return '[' + this.key + ' - ' + this.value + ']';
-        }
-    };
 }
 
 let hash = new HashTable();
 hash.put('Gandalf', 'gandalf@email.com');
 hash.put('John', 'john@email.com');
 hash.put('Tyrion', 'tyrion@email.com');
-
+module.exports=HashTable;
 console.log(hash.get('Gandalf'));
 console.log(hash.get('Loiance'));
