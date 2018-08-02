@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>demo</title>
+    <style>
+        td, tr {
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .move-item {
+            position: absolute;
+            border: 1px solid #ddd;
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            left:10px;
+            top:15px;
+            -webkit-user-select: none;
+            user-select: none;
+            background: #FFFFFF;
+        }
+        .resize{
+            width:10px;
+            height:10px;
+            position: absolute;
+            bottom:0;
+            right:0;
+            cursor: nwse-resize;
+        }
+        .resize:after{
+            content:' ';
+            width:11px;
+            height:1px;
+            background: #aaa;
+            display: inline-block;
+            position: absolute;
+            bottom:0;
+            left:3px;
+            transform: rotate(-45deg);
+            transform-origin: left bottom;
+        }
+        .resize:before{
+            content:' ';
+            width:5px;
+            height:1px;
+            background: #aaa;
+            display: inline-block;
+            position: absolute;
+            top:6px;
+            right:0;
+            transform: rotate(-45deg);
+            transform-origin: right top;
+        }
+        .close{
+            width:10px;
+            height:10px;
+            position: absolute;
+            top:-5px;
+            right:-5px;
+            line-height:10px;
+            font-size:12px;
+            cursor: pointer;
+        }
+        .close:before,.close:after{
+            content:' ';
+            display: inline-block;
+            width: 12px;
+            height:1px;
+            background: #333;
+            position: absolute;
+            top:0;
+        }
+        .close:before{
+            transform: rotate(40deg);
+            transform-origin: left top;
+            left:1px;
+        }
+        .close:after{
+            transform: rotate(-40deg);
+            transform-origin: right top;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+<div class="main-content" style="width: 600px;height: 400px;border: 1px solid #ccc;margin: 0 auto;position: relative;">
+    <div class="move-item">
+        收件人
+        <span class="resize"></span>
+        <i class="close"></i>
+    </div>
+</div>
+<input type="button" value="+ 添加" class="add-item">
+<script src="move.js"></script>
+</body>
+</html>
